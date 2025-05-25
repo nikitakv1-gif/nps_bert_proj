@@ -1,11 +1,6 @@
 import pandas as pd
 import numpy as np
 # from google.colab import drive
-from nlpaug.augmenter.word import SynonymAug, ContextualWordEmbsAug
-import random
-from tqdm import tqdm
-import matplotlib.pyplot as plt
-import seaborn as sns
 from transformers import AutoTokenizer
 import os
 from transformers import AutoModel
@@ -13,10 +8,6 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
-from torch.optim import AdamW
-from transformers import get_linear_schedule_with_warmup
-from sklearn.metrics import f1_score
-from sklearn.metrics import classification_report
 
 
 class ThreeInputModel(nn.Module):
