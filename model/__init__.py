@@ -2,9 +2,12 @@ from model.ThreeInputModel import ThreeInputModel
 from model.dataset import ReviewsDataset
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import os
 
-path_to_model = r'D:\University\Samsung\project\model\presave\model.pt'
-path_to_tokenizer= r'D:\University\Samsung\project\model\presave'
+base_path = os.path.dirname(__file__)  # Путь до текущего файла model/__init__.py
+
+path_to_model = os.path.join(base_path, 'presave', 'model.pt')
+path_to_tokenizer = os.path.join(base_path, 'presave')
 
 def model():
     model = ThreeInputModel('cointegrated/rubert-tiny2', num_labels=5)
